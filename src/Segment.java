@@ -14,7 +14,7 @@ public class Segment {
         return Math.sqrt(dx * dx + dy * dy);
     }
 
-    // Zadanie 5 (przeniesiona metoda do klasy Segment)
+
     public static Segment longestSegment(Segment[] segments) {
         if (segments == null || segments.length == 0) {
             return null;

@@ -8,7 +8,7 @@ public class Point {
         this.y = 0;
     }
 
-    // Konstruktor z parametrami
+
     public Point(double x, double y) {
         this.x = x;
         this.y = y;

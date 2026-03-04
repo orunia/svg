@@ -27,7 +27,7 @@ public class Main {
         System.out.println("Długość s2: " + s2.length());
         System.out.println("Długość s3: " + s3.length());
 
-        // Zadanie 5
+
         Segment[] segments = {s1, s2, s3};
         Segment longest = Segment.longestSegment(segments);
 
