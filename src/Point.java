@@ -1,38 +1,41 @@
 public class Point {
-    public double x;
-    public double y;
+    private double x;
+    private double y;
 
-    // Konstruktor bezargumentowy
     public Point() {
-        this.x = 0;
-        this.y = 0;
+        this(0, 0);
     }
-
 
     public Point(double x, double y) {
         this.x = x;
         this.y = y;
     }
 
-    // Zadanie 1
+    public Point(Point other) {
+        this.x = other.x;
+        this.y = other.y;
+    }
+
+    public double getX() { return x; }
+    public double getY() { return y; }
+    public void setX(double x) { this.x = x; }
+    public void setY(double y) { this.y = y; }
+
+    public void translate(double dx, double dy) {
+        x += dx;
+        y += dy;
+    }
+
+    public Point translated(double dx, double dy) {
+        return new Point(x + dx, y + dy);
+    }
+
     @Override
     public String toString() {
-        return "x: " + x + ", y: " + y;
+        return "(" + x + ", " + y + ")";
     }
 
-    // Zadanie 2
     public String toSvg() {
         return "<circle r=\"5\" cx=\"" + x + "\" cy=\"" + y + "\" fill=\"red\" />";
-    }
-
-    // Zadanie 3 - zmienia aktualny punkt
-    public void translate(double dx, double dy) {
-        this.x += dx;
-        this.y += dy;
-    }
-
-    // Zadanie 3 - tworzy nowy przesunięty punkt
-    public Point translated(double dx, double dy) {
-        return new Point(this.x + dx, this.y + dy);
     }
 }
