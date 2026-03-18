@@ -11,9 +11,9 @@ public class Point {
         this.y = y;
     }
 
-    public Point(Point other) {
-        this.x = other.x;
-        this.y = other.y;
+    public Point(Point inny) {
+        this.x = inny.x;
+        this.y = inny.y;
     }
 
     public double getX() { return x; }
@@ -30,7 +30,6 @@ public class Point {
         return new Point(x + dx, y + dy);
     }
 
-    @Override
     public String toString() {
         return "(" + x + ", " + y + ")";
     }

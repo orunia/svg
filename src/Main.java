@@ -29,5 +29,23 @@ public class Main {
 
         System.out.println(wielokat);
         System.out.println("SVG wielokąta: " + wielokat.toSvg());
+
+        Style styl = new Style("none", "blue", 2.0);
+
+        Segment odcinek = new Segment(new Point(0, 0), new Point(100, 0));
+        Polygon kwadrat = Polygon.square(odcinek, styl);
+
+        System.out.println("Kwadrat SVG: " + kwadrat.toSvg());
+
+        Ellipse elipsa = new Ellipse(new Point(50, 50), 30, 20, new Style("red", "black", 1.0));
+
+        Shape[] ksztalty = {wielokat, kwadrat, elipsa};
+
+        SvgScene scena = new SvgScene(ksztalty);
+
+        System.out.println("Cała scena SVG:");
+        System.out.println(scena.toSvg());
+        scena.save("obraz.svg");
+
     }
 }
